@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ChatsPoint Create Account</title>
-	<link rel="stylesheet" type="text/css" href="../public/stylesheets/bootstrap.min.css">
-</head>
-<body>
-<form>
-	<input type="text" name="users_name" />
-	<input type="submit" name="submit" />
-</form>
-</body>
-</html>
+<div id="form">
+<form name="create_account_form" ng-submit="createAccount()">
+		<input type="text" name="user_name" class="input-size form-control" ng-model="formModel.user_name"/></br>
+		<input type="email" name="email_id" class="input-size form-control"  ng-model="formModel.email_id"/></br>
+		<input type="password" name="pass" class="input-size form-control"  ng-model="formModel.pass"/></br>
+		<input type="text" name="confirm_pass" class="input-size form-control"  ng-model="formModel.confirm_pass"/></br>
+		<div class="form-group">
+		<button type="submit" class="btn btn-primary" id="submit">Submit</button>
+		<label id="remember_me"><input type="checkbox" name="remember_me" id="checkbox">Remember me</label>
+		</div>
+</form>	
+</div>
+

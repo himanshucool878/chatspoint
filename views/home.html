@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chats Point Home</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/create-account.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+	<script type="text/javascript" src="/javascripts/angular.min.js"></script>
+	
+	<script type="text/javascript" src="/javascripts/angularModule.js"></script>
+
+	<script type="text/javascript" src="/angular-route.min.js"></script>
+
+	<script type="text/javascript" src="/angularRoute.js"></script>
+
+	<script type="text/javascript" src="/javascripts/angularControllers.js"></script>
+</head>
+
+<body ng-app="chatsPoint">
+
+<div ng-include="'header.html'"></div>
+
+<div ng-controller="FirstController">
+<div ng-controller="LoginController">
+	<div ng-view></div>
+</div>
+</div>
+</body>
+</html>
+

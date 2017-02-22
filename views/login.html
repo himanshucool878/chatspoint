@@ -1,44 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Chats Point Login</title>
-	<link rel="stylesheet" type="text/css" href="../public/stylesheets/bootstrap.min.css">
-	<script type="text/javascript" src="../public/javascripts/angular.min.js"></script>
-	
-	<script type="text/javascript" src="../public/javascripts/angularModule.js"></script>
-
-	<script type="text/javascript" src="../routes/angular-route.min.js"></script>
-
-	<script type="text/javascript" src="../routes/angularRoute.js"></script>
-</head>
-<body ng-app="chatsPoint">
-
-<div ng-include="'header.html'"></div>
-
-<!-- <a href="#createaccount">Create Account</a> -->
-
-
-<!-- <form>
-	<input type="text" ng-model="name" />{{ name }}
-	<input type="password" name="">
-	<button>Login</button>
-</form> -->
-<!-- <div ng-controller="FirstController">{{ xyz }}</div> -->
-<div ng-view></div>
-
-<!-- <script type="text/javascript" src="../public/javascripts/angularControllers.js"></script> -->
-<!-- <script type="text/javascript" src="../routes/angularRoute.js"></script> -->
-<!-- <script>
-	chatsPoint.controller(angularControllers);
-</script> -->
-
-<!-- <script>
-chatsPoint.config(function($routeProvider){
-	$routeProvider.when('/createaccount', {templateUrl: "../views/create_account.html"});
-});
-</script> -->
-
-</body>
-</html>
-
-<!-- <a href="#createaccount">Create Account</a> -->
+<form id="form" ng-submit="loginAccount()">
+	<input type="text" name="emailId" class="form-control input-size" ng-model="loginFormModel.emailId"/>
+	<input type="password" name="user_password" class="form-control input-size" ng-model="loginFormModel.user_password"/>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">Login</button>
+		<label><input type="checkbox" name="rememberMe" ng-model="loginFormModel.checkbox"/>Remember me</label>
+	</div>
+</form>

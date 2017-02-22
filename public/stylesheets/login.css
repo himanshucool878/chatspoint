@@ -1,0 +1,17 @@
+#form{
+	position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; 
+    margin-left: -11em;
+}
+.input-size{
+	width: 300px;
+	height: 40px;
+}
+#submit{
+	width: 100px;
+	height: 40px;
+}
