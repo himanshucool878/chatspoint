@@ -19,6 +19,7 @@ app.get('/', function (req,res) {
 	res.sendFile(__dirname + '/views/home.html');
 });
 
+console.log("himanshu")
 
 app.post('/testing', function (req, res) {
     mongoConnection(function(db){
