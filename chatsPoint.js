@@ -76,6 +76,8 @@ mongoConnection(function(db,err){
 
 });
 
+console.log("testing")
+
 
 http.createServer(app).listen(8000, function() {
     console.log('Express server listening on port ' +8000);
