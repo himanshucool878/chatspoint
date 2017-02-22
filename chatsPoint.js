@@ -76,7 +76,7 @@ mongoConnection(function(db,err){
 
 });
 
-console.log("testing........")
+console.log("testing..")
 
 
 http.createServer(app).listen(8000, function() {
