@@ -19,7 +19,6 @@ app.get('/', function (req,res) {
 	res.sendFile(__dirname + '/views/home.html');
 });
 
-console.log("himanshu yadav.....")
 
 app.post('/testing', function (req, res) {
     mongoConnection(function(db){
@@ -44,7 +43,8 @@ app.post('/login', function(req, res){
 	var user_email_id = req.body.emailId;
 	var user_pass = req.body.user_password;
 	var user_info = [];
-mongoConnection(function(db,err){
+
+	mongoConnection(function(db,err){
 		 db.collection("create_account").find({$and:[
 			{$or:[
 				{'email_id':user_email_id}, 
@@ -53,31 +53,29 @@ mongoConnection(function(db,err){
 			{'confirm_pass':user_pass}
 			]}, function(err,fetch_data){
 				if(fetch_data){	
-			fetch_data.forEach(function(doc,err){
-				user_info.push(doc);
-			},function(){
-				var userInfo= user_info[0];
-				if(userInfo){
-					req.session.user_Name = userInfo.user_name;
-					console.log(req.session.user_Name);
-					res.send("Login Successfully" + req.session.user_Name);
-					db.close();
+					fetch_data.forEach(function(doc,err){
+						user_info.push(doc);
+					},function(){
+						var userInfo= user_info[0];
+						if(userInfo){
+							req.session.user_Name = userInfo.user_name;
+							console.log(req.session.user_Name);
+							res.send("Login Successfully" + req.session.user_Name);
+							db.close();
+						}
+						else{
+							console.log("Invalid Username or Password!");
+							db.close();
+						}
+				
+					});
 				}
-				else{
-					console.log("Invalid Username or Password!");
-					db.close();
-				}
-		
-			});
-		}
-			});
+		});
 
 		
 	});
 
 });
-
-console.log("testing..")
 
 
 http.createServer(app).listen(8000, function() {

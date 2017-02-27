@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="chatsPoint">
+<html>
 <head>
 	<title>Chats Point Home</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
@@ -16,13 +16,13 @@
 	<script type="text/javascript" src="/javascripts/angularControllers.js"></script>
 </head>
 
-<body>
-<div ng-controller="CreateAccountController">
-<div ng-controller="LoginController">
-<div ng-controller="WelcomeController"></div>
+<body ng-app="chatsPoint">
+
 <div ng-include="'header.html'"></div>
 
-	<div ng-view></div>
+<div ng-controller="FirstController">
+<div ng-controller="LoginController">
+	<div ng-view></div>	
 </div>
 </div>
 </body>
